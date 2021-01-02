@@ -44,6 +44,7 @@ Will be a REST API with to work as local server (to take tests in schools). or c
       - Description
       - Parent_set `Foreign key with itself`
       - Owner `Foreign Key with User Model`
+      - per_question_time `in seconds, seperated wih comma if for competition and consecutive group get different time for each question, first one will be appiled for a test `
   + **`Question`**
     - set_id
     - Question_text
