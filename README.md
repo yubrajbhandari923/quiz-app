@@ -45,6 +45,7 @@ Will be a REST API with to work as local server (to take tests in schools). or c
       - Parent_set `Foreign key with itself`
       - Owner `Foreign Key with User Model`
       - per_question_time `in seconds, seperated wih comma if for competition and consecutive group get different time for each question, first one will be appiled for a test `
+      - display_all_question_at_once `Applicable only for Test, if true then time per question will be multiplied with no. of questions and total time will be given to solve the set.`
   + **`Question`**
     - set_id
     - Question_text
@@ -54,7 +55,7 @@ Will be a REST API with to work as local server (to take tests in schools). or c
     - correct_answers `Different Possible answers seperated with commas`
     - owner
     - is_public `Anyone can add this question to their set`
-    - manual_check `Automatically check correct(if FALSE) or manually check(if TRUE) `
+    - manual_check `Only for test, Automatically check correct(if FALSE) or manually check(if TRUE) `
     - mark
     - negetive_mark
   + **`Choice`**
