@@ -15,6 +15,7 @@ This document is created for the aid of any developer who may join during the de
 `docker-compose up`
 
 ## Backend
+Will be a REST API with to work as local server (to take tests in schools). or can be implemented in Internet with any SPA, desktop, or native mobile client.
 **Dependencies** 
   - Django
   - django_rest_framework
@@ -42,11 +43,51 @@ This document is created for the aid of any developer who may join during the de
       - Name
       - Description
       - Parent_set `Foreign key with itself`
+      - Owner `Foreign Key with User Model`
   + **`Question`**
-    - 
+    - set_id
+    - Question_text
+    - has_text_field
+    - has_choices
+    - has_hints
+    - correct_answers `Different Possible answers seperated with commas`
+    - owner
+    - is_public `Anyone can add this question to their set`
+    - manual_check `Automatically check correct(if FALSE) or manually check(if TRUE) `
+    - mark
+    - negetive_mark
+  + **`Choice`**
+    - question_id
+    - choice_text
+  + **`Hint`**
+    - question_id
+    - hint_text
+  + **`Answer`**
+    - submitted_by
+    - question_id
+    - answer_text
+    - is_correct(METHOD) `checks answer_text with correct_answers`
+  + **`Competition`**
+    For conducting quiz competiton
+    - master_question_set_id
+    - title
+    - description
+    - organizer
+    - additional text
+  + **`Group`**
+    - competition_id
+    - group_name
+    - members `Comma Seperated names`
+    - additional_info
+  + **`CompetitionAnswer`**
+    - group_id
+    - question_id
+    - is_correct
+    
+    
     
 ### Authentication System
 **Model:** `django.contrib.auth.models.User`
 + Authentication System is handled with JWT Tokens.  
 + Refresh Token (15 days Valid) as HttpOnly Cookie and Access Token as Json will be provided on authentication.  
-
++ Must create account to create questionnair or submit answers.
